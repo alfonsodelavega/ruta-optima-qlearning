@@ -6,7 +6,7 @@ def valor_estado(estado, valores_q):
     """ Devuelve el valor de un estado teniendo en cuenta los valores_q. """
     pass
 
-def print_state_values(states, qvalues):
+def imprimir_valores_estados(estados, valores_q):
     """ Calcula e imprime los valores de todos los estados. """
     pass
 

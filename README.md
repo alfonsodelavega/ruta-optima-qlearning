@@ -8,11 +8,11 @@ Discreto, Modelo Desconocido, Q-Learning.
 
 ## Descripción
 En este segundo desafío construirás un agente capaz de aprender la ruta óptima
-en cualquier laberinto mediante prueba y error. Lo conseguirás utilizando el
-algoritmo Q-Learning para calcular los valores asociados a cada estado Q. Cada
+en cualquier laberinto mediante Reinforcement Learning. Lo conseguirás
+utilizando Q-Learning para calcular los valores asociados a cada estado Q. Cada
 estado Q representa la combinación de un estado con una de las acciones
-disponibles desde dicho estado. Terminarás extrayendo la política óptima
-haciendo uso de los valores Q.
+disponibles en dicho estado. Terminarás extrayendo la política óptima haciendo
+uso de los valores Q.
 
 El movimiento del agente tendrá una fuerte componente estocástica y las
 funciones de transición y de recompensa serán desconocidas.

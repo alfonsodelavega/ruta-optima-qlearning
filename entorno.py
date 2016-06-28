@@ -42,8 +42,8 @@ def paso(estado, accion):
 def desplazamiento(accion):
     """ Devuelve un posible desplazamiento tras seleccionar accion (en esta
     funcion no puede ser 'EXIT'). El desplazamiento coincidira con accion el 80%
-    de las veces, se desviara a la derecha, respecto a la orientación de la
-    acción, un 10% y a la izquierda otro 10%.
+    de las veces, se desviara a la derecha, respecto a la orientacion de la
+    accion, un 10% y a la izquierda otro 10%.
     
     E.g. desplazamiento('W') devolvera 'W' el 80% de las veces, 'N' el 10% de
     las veces y 'S' el 10% restante.
@@ -53,7 +53,7 @@ def desplazamiento(accion):
 def siguiente_estado(estado, accion):
     """ Devuelve la celda en la que acabara el agente tras elegir accion desde
     estado. La componente estocastica se tendra en cuenta llamando a la funcion
-    desplazamiento(accion). Hay que tener en cuenta el comportamiento ante los
+    desplazamiento(accion). Hay que contemplar el comportamiento ante los
     obstaculos y limites del laberinto.
     
     E.g. siguiente_estado((0, 1), 'E') puede devolver (0, 2) o (0, 1)

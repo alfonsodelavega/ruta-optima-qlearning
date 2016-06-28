@@ -3,7 +3,11 @@
 # Ronny Conde at Monkey from the Future
 
 def valor_estado(estado, valores_q):
-    """ Devuelve el valor de un estado teniendo en cuenta los valores_q. """
+    """ Calculara y devolvera el valor asociado a estado teniendo en cuenta
+    valores_q.  El valor de un estado se define como la suma de las recompensas
+    que se esperan recibir hasta el final del episodio partiendo de ese estado
+    (teniendo en cuenta el factor de descuento γ) si se actua de manera optima.
+    """ 
     pass
 
 def imprimir_valores_estados(estados, valores_q):
@@ -20,27 +24,28 @@ def qlearning():
     # E.g. estados se inicializara como [(0, 0), (0, 1), ... ] 
     
     # Inicializamos valores_q como un diccionario:
-    #   - claves: tuplas con la combinacion de estados y acciones disponibles
-    #   - valores: suma de las recompensas medias que se recibiran hasta el
-    #   final del episodio si tras seleccionar accion desde estado se actua de
-    #   manera optima, teniendo en cuenta el factor de descuento gamma.
+    #   - Claves. Tuplas con la combinacion de cada estado y sus acciones disponibles
+    #   - Valores: Suma de las recompensas que se esperan recibir hasta el final
+    #   del episodio si se actua de manera optima partiendo del estado Q (la
+    #   clave asociada) y teniendo en cuenta el factor de descuento gamma.
     # Inicialmente todos los valores se inicializaran a 0.0
+    # E.g. valores_q se inicializara como {((0, 0), 'W'): 0.0, ((0, 0), 'N'):
+    # 0.0, ... }
 
     # Actualizar valores_q entrenando el agente con qlearning durante N
     # episodios.
-    # E.g.
+    # E.g. A continuacion se muestra una posible estructura
     # for episode in range(N):
     #     s = env.reset()
     #     for _ in range(10000): # Numero limite de pasos por episodio
     #         ...
     #         ...
-    #         if done: #End of Episode
+    #         if done: # Fin del Episodio
     #             ...
     #             break
     #     ...
 
-
-    # Imprime los valores de los estados (no valores_q)
+    # Llamada a imprimir_valores_estados(estados, valores_q).
 
 if __name__ == "__main__":
     qlearning()

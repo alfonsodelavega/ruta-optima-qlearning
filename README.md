@@ -1,3 +1,5 @@
+**[Chatea con nosotros](https://gitter.im/monkey-from-the-future/chat) si tienes dudas o te atascas**
+
 # Aprendizaje de la Ruta Óptima en un Laberinto con Q-Learning.
 **Desafío Id #2**
 ## Etiquetas
@@ -19,3 +21,6 @@ funciones de transición y de recompensa serán desconocidas.
 
 ## Información Completa para Resolver el Reto
 [Accede a la Información Necesaria para Resolver el Reto](https://monkeyfromthefuture.wordpress.com/aprendizaje-ruta-optima-laberinto-qlearning/ "Descripción Completa del Reto")
+
+## ¿Dudas? ¿Atascado?
+**[Chatea con nosotros](https://gitter.im/monkey-from-the-future/chat) si tienes dudas o te atascas**

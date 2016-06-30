@@ -1,7 +1,7 @@
 **[Chatea con nosotros](https://gitter.im/monkey-from-the-future/chat) si tienes dudas o te atascas**
 
 # Aprendizaje de la Ruta Óptima en un Laberinto con Q-Learning.
-**Desafío Id #2**
+
 ## Etiquetas
 Reinforcement Learning, Espacio de los Estados Discreto, Espacio de las Acciones
 Discreto, Modelo Desconocido, Q-Learning.

@@ -9,7 +9,10 @@ def acciones_disponibles(estado):
     E.g. acciones_disponibles((0,0)) devolvera ['W', 'N', 'E', 'S'];
     acciones_disponibles((1,3)) devolvera ['EXIT']
     """
-    pass
+    if estado == (0, 3) or estado == (1, 3):
+        return ['EXIT']
+    else:
+        return ['W', 'N', 'E', 'S']
 
 def recompensa(estado, accion):
     """ Devuelve la recompensa que se recibira al abandonar estado tras
@@ -18,20 +21,26 @@ def recompensa(estado, accion):
     E.g. recompensa((0,0), 'E') devolvera 0.0; recompensa((0,3), 'EXIT')
     devolvera 1.0
     """
-    pass
+    if accion == 'EXIT' and estado == (0, 3):
+        return 1.0
+    elif accion == 'EXIT' and estado == (1, 3):
+        return -1.0
+    else:
+        return 0.0
 
 def reset():
-    """ Resetea el entorno, devolviendo el estado inicial.
+    """ Devuelve el estado inicial (equivalente a reiniciar el entorno). En este
+    caso el estado inicial va a ser (2, 0).
     
-    E.g. reset() puede devolver (0, 0) o (2, 0) o (2, 1), ...
+    E.g. reset() devolvera (2, 0)
     """
     pass
 
 def paso(estado, accion):
-    """ El entorno recibe la accion seleccionada por el agente desde estado y le
+    """ El entorno recibe la accion seleccionada por el agente desde estado y
     devuelve una tupla con:
         - el nuevo estado
-        - la recompensa (funcion del estado de partida y la accion elegida)
+        - la recompensa (funcion de estado y accion)
         - una variable que indica si ha terminado el episodio (True / False).
     
     E.g. paso((0, 0), 'E') puede devolver ((0, 1), 0.0, False)
@@ -52,7 +61,7 @@ def desplazamiento(accion):
 
 def siguiente_estado(estado, accion):
     """ Devuelve la celda en la que acabara el agente tras elegir accion desde
-    estado. La componente estocastica se tendra en cuenta llamando a la funcion
+    estado. La componente estocástica se ha tenido en cuenta en la función
     desplazamiento(accion). Hay que contemplar el comportamiento ante los
     obstaculos y limites del laberinto.
     

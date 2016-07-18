@@ -1,6 +1,13 @@
 #!/ usr/bin/python -tt
 # -*- coding: utf-8 -*-
 # Ronny Conde at Monkey from the Future
+from random import random
+
+acciones_laterales = {
+    "N": ("E", "W"),
+    "S": ("E", "W"),
+    "E": ("N", "S"),
+    "W": ("N", "S")}
 
 
 def acciones_disponibles(estado):
@@ -37,7 +44,7 @@ def reset():
 
     E.g. reset() devolvera (2, 0)
     """
-    pass
+    return (2, 0)
 
 
 def paso(estado, accion):
@@ -50,7 +57,10 @@ def paso(estado, accion):
     E.g. paso((0, 0), 'E') puede devolver ((0, 1), 0.0, False)
     o ((0, 0), 0.0, False) o ((1, 0), 0.0, False)
     """
-    pass
+    nuevo_estado = siguiente_estado(estado, accion)
+    rec = recompensa(estado, accion)
+    episodio_terminado = nuevo_estado is None
+    return (nuevo_estado, rec, episodio_terminado)
 
 
 def desplazamiento(accion):
@@ -62,7 +72,14 @@ def desplazamiento(accion):
     E.g. desplazamiento('W') devolvera 'W' el 80% de las veces, 'N' el 10% de
     las veces y 'S' el 10% restante.
     """
-    pass
+    desvio1, desvio2 = acciones_laterales[accion]
+    rand = random()
+    if rand < 0.8:
+        return accion
+    elif rand < 0.9:
+        return desvio1
+    else:
+        return desvio2
 
 
 def siguiente_estado(estado, accion):
@@ -73,4 +90,23 @@ def siguiente_estado(estado, accion):
 
     E.g. siguiente_estado((0, 1), 'E') puede devolver (0, 2) o (0, 1)
     """
-    pass
+    length_filas = 3
+    length_columnas = 4
+
+    new_pos = None
+    if accion == "N":
+        new_pos = (estado[0] - 1, estado[1])
+    elif accion == "S":
+        new_pos = (estado[0] + 1, estado[1])
+    elif accion == "E":
+        new_pos = (estado[0], estado[1] + 1)
+    elif accion == "W":
+        new_pos = (estado[0], estado[1] - 1)
+    elif accion == "EXIT":
+        return None
+
+    if new_pos[0] < 0 or new_pos[0] >= length_filas or \
+       new_pos[1] < 0 or new_pos[1] >= length_columnas or \
+       (new_pos[0], new_pos[1]) == (1, 1):
+        return estado
+    return new_pos
